@@ -1,5 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Rating } from "react-simple-star-rating";
+import { mapRatingToFive } from "../utils/ratingMapping";
 
 const MovieCard = ({
   title,
@@ -9,6 +11,7 @@ const MovieCard = ({
   voteAvrg,
   isFiltered,
 }) => {
+  const starRating = mapRatingToFive(voteAvrg);
   return (
     <Card className="text-white bg-dark h-100 shadow-sm cardHover">
       {/* Si la imagen falla en cargar por alguna razon hay que hacer improvements*/}
@@ -58,6 +61,15 @@ const MovieCard = ({
           </Card.Text>
         </div> */}
       </Card.ImgOverlay>
+      <Rating
+        readonly
+        initialValue={starRating}
+        size={25}
+        allowFraction
+        transition
+        fillColor="orange"
+        emptyColor="gray"
+      />
     </Card>
   );
 };

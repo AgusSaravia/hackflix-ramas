@@ -1,6 +1,6 @@
 import React from "react";
 import { Rating } from "react-simple-star-rating";
-import { Button } from "react-bootstrap"; // Opcional, para el botón
+import { Button } from "react-bootstrap";
 
 const RatingFilter = ({ selectedStars, onRatingChange, onReset }) => {
   return (
